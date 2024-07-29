@@ -10,12 +10,28 @@ import * as L from 'leaflet';
 export class ContactFormComponent implements OnInit {
 
   formNewData: FormGroup;
+  private map: L.Map;
+
+  private initMap():void{
+    this.map = L.map('map', {
+      center: [51.505, -0.09],
+      zoom: 10
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+    }).addTo(this.map);
+  }
+
+  
 
   constructor(
     private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
+    this.initMap();
     this.formBuild();
   }
 
