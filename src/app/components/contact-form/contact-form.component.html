@@ -1,0 +1,72 @@
+<form class="form card shadow-sm" [formGroup]="formNewData">
+    <div class="card-body">
+        <div class="row mb-10">
+            <div class="col-sm-12">
+                <label class="form-label">Nombre(Obligatorio)</label>
+                <input 
+                 formControlName="fullName"
+                 [class.is-valid]="validField('fullName')"
+                 [class.is-invalid]="nonValidField('fullName')"
+                 class="form-control form-control-solid">
+            </div>
+            <div *ngIf="nonValidField('fullName')">
+                <span *ngIf="showError('fullName', 'maxlength')"
+                class="text-danger">Limite maximo de caracteres ingresados</span>
+                <span *ngIf="showError('fullName', 'pattern')"
+                class="text-danger">No se permiten caracteres</span>
+                <span *ngIf="showError('fullName', 'required')"
+                class="text-danger">Campo requerido</span>
+            </div>
+        </div>
+        <div class="row mb-10">
+            <div class="col-sm-12">
+                <label class="form-label">Correo Electronico(Obligatorio)</label>
+                <input 
+                 formControlName="email"
+                 [class.is-valid]="validField('email')"
+                 [class.is-invalid]="nonValidField('email')"
+                 class="form-control form-control-solid">
+            </div>
+            <div *ngIf="nonValidField('email')">
+                <span *ngIf="showError('email', 'required')"
+                class="text-danger">correo obligatorio</span>
+                <span *ngIf="showError('email', 'pattern')"
+                class="text-danger">Correo invalido</span>
+                <span *ngIf="showError('email', 'email')"
+                class="text-danger">Correo invalido</span>
+            </div>
+        </div>
+        <div class="row mb-10">
+            <div class="col-sm-12">
+                <label class="form-label">Asunto</label>
+                <input 
+                 formControlName="affair"
+                 [class.is-valid]="validField('affair')"
+                 [class.is-invalid]="nonValidField('affair')"
+                 class="form-control form-control-solid">
+            </div>
+            <div *ngIf="nonValidField('affair')">
+                <span *ngIf="showError('affair', 'maxlength')"
+                class="text-danger">Limite maximo de caracteres ingresados</span>
+                <span *ngIf="showError('affair', 'pattern')"
+                class="text-danger">No se permiten caracteres</span>
+            </div>
+        </div>
+        <div class="row mb-10">
+            <div class="col-sm-12">
+                <label class="form-label">Mensaje</label>
+                <input 
+                 formControlName="detail"
+                 [class.is-valid]="validField('detail')"
+                 [class.is-invalid]="nonValidField('detail')"
+                 class="form-control form-control-solid">
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <button
+        type="button"
+        class="btn btn-primary"
+        >Enviar</button>
+    </div>
+</form>
