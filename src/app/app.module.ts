@@ -14,6 +14,8 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { CaftaComponent } from './pages/cafta/cafta.component';
 import { CaftaFormComponent } from './components/cafta-form/cafta-form.component';
+import { QuienesSomosComponent } from './pages/quienes-somos/quienes-somos.component';
+import { QuienesSomosFormComponent } from './components/quienes-somos-form/quienes-somos-form.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { CaftaFormComponent } from './components/cafta-form/cafta-form.component
     ContactFormComponent,
     ContactoComponent,
     CaftaComponent,
-    CaftaFormComponent
+    CaftaFormComponent,
+    QuienesSomosComponent,
+    QuienesSomosFormComponent
   ],
   imports: [
     BrowserModule,
