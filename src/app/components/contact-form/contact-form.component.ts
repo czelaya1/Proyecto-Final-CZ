@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import * as L from 'leaflet';
 
 @Component({
   selector: 'app-contact-form',

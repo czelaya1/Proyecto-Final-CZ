@@ -30,3 +30,24 @@
 .nav ul li:hover{
     background-color: #cf2e2e;
 }
+
+.logo {
+    display: flex;
+    width: 100%;
+    padding: 0px;
+    justify-content: center;
+}
+
+.logo-hover {
+    cursor: pointer;
+}
+
+.monitor-menu {
+    justify-content: center;
+    list-style: none;
+}
+
+.menu-icon {
+    display: none;
+    padding: 0;
+}

@@ -4,11 +4,12 @@ import { IndexComponent } from './pages/index/index.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 
 const routes: Routes = [
-  {
-    path: '', component: IndexComponent,
-    children: [
-      {path: 'contacto', component: ContactoComponent}
-    ]
+  { path: 'index', component: IndexComponent},
+  { path: 'contacto', component: ContactoComponent},
+
+  { 
+    path: '**',
+    redirectTo: '/index'
   }
 ];
 
