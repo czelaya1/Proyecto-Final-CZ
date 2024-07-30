@@ -8,23 +8,23 @@ import { Component, OnInit } from '@angular/core';
 
 export class HeaderComponent implements OnInit {
 
-  isItemClick = false;
+  isItemClick: boolean = false;
+  isItemIcon:string = 'li li-list'
   
-  menuChange(): void{
-    this.isItemClick =! this.isItemClick;
-  }
-
-  public urls : string[] = [
-    'Inicio',
-    'Organización',
-    'Transparencia',
-    'Carta',
-    'Contacto'
-  ]
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  menuChange(): void{
+    this.isItemClick =! this.isItemClick;
+    this.isItemIcon = this.isItemIcon ? 'li li-x' : 'li li-list';
+  }
+
+  menuClose(){
+    this.isItemClick = false;
+    this.isItemIcon = 'li li-list';
   }
 
 }

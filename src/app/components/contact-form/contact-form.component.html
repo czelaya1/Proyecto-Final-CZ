@@ -1,72 +1,111 @@
 <form class="form card shadow-sm" [formGroup]="formNewData">
     <div class="card-body">
         <div class="row mb-10">
-            <div class="col-sm-12">
-                <label class="form-label">Nombre(Obligatorio)</label>
-                <input 
-                 formControlName="fullName"
-                 [class.is-valid]="validField('fullName')"
-                 [class.is-invalid]="nonValidField('fullName')"
-                 class="form-control form-control-solid">
+            <div class="mb-3">
+                <label class="form-label label">Nombre (Obligatorio)</label>
+            </div>
+            <div>
+                <input formControlName="fullName" [class.is-valid]="validField('fullName')"
+                    [class.is-invalid]="nonValidField('fullName')" class="form-control form-control-solid input">
             </div>
             <div *ngIf="nonValidField('fullName')">
-                <span *ngIf="showError('fullName', 'maxlength')"
-                class="text-danger">Limite maximo de caracteres ingresados</span>
-                <span *ngIf="showError('fullName', 'pattern')"
-                class="text-danger">No se permiten caracteres</span>
-                <span *ngIf="showError('fullName', 'required')"
-                class="text-danger">Campo requerido</span>
+                <span *ngIf="showError('fullName', 'maxlength')" class="text-danger">Limite maximo de caracteres
+                    ingresados</span>
+                <span *ngIf="showError('fullName', 'pattern')" class="text-danger">No se permiten caracteres</span>
+                <span *ngIf="showError('fullName', 'required')" class="text-danger">Campo requerido</span>
             </div>
         </div>
         <div class="row mb-10">
-            <div class="col-sm-12">
-                <label class="form-label">Correo Electronico(Obligatorio)</label>
-                <input 
-                 formControlName="email"
-                 [class.is-valid]="validField('email')"
-                 [class.is-invalid]="nonValidField('email')"
-                 class="form-control form-control-solid">
+            <div class="mb-3">
+                <label class="form-label label">Correo Electronico (Obligatorio)</label>
+            </div>
+            <div>
+                <input formControlName="email" [class.is-valid]="validField('email')"
+                    [class.is-invalid]="nonValidField('email')" class="form-control form-control-solid input">
             </div>
             <div *ngIf="nonValidField('email')">
-                <span *ngIf="showError('email', 'required')"
-                class="text-danger">correo obligatorio</span>
-                <span *ngIf="showError('email', 'pattern')"
-                class="text-danger">Correo invalido</span>
-                <span *ngIf="showError('email', 'email')"
-                class="text-danger">Correo invalido</span>
+                <span *ngIf="showError('email', 'required')" class="text-danger">correo obligatorio</span>
+                <span *ngIf="showError('email', 'pattern')" class="text-danger">Correo invalido</span>
+                <span *ngIf="showError('email', 'email')" class="text-danger">Correo invalido</span>
             </div>
         </div>
         <div class="row mb-10">
-            <div class="col-sm-12">
-                <label class="form-label">Asunto</label>
-                <input 
-                 formControlName="affair"
-                 [class.is-valid]="validField('affair')"
-                 [class.is-invalid]="nonValidField('affair')"
-                 class="form-control form-control-solid">
+            <div class="mb-3">
+                <label class="form-label label">Asunto</label>
+            </div>
+            <div>
+                <input formControlName="affair" [class.is-valid]="validField('affair')"
+                    [class.is-invalid]="nonValidField('affair')" class="form-control form-control-solid input">
             </div>
             <div *ngIf="nonValidField('affair')">
-                <span *ngIf="showError('affair', 'maxlength')"
-                class="text-danger">Limite maximo de caracteres ingresados</span>
-                <span *ngIf="showError('affair', 'pattern')"
-                class="text-danger">No se permiten caracteres</span>
+                <span *ngIf="showError('affair', 'maxlength')" class="text-danger">Limite maximo de caracteres
+                    ingresados</span>
+                <span *ngIf="showError('affair', 'pattern')" class="text-danger">No se permiten caracteres</span>
             </div>
         </div>
         <div class="row mb-10">
-            <div class="col-sm-12">
-                <label class="form-label">Mensaje</label>
-                <input 
-                 formControlName="detail"
-                 [class.is-valid]="validField('detail')"
-                 [class.is-invalid]="nonValidField('detail')"
-                 class="form-control form-control-solid">
+            <div class="row mb-10">
+                <div class="col-sm-12">
+                    <label class="form-label label">Mensaje</label>
+                </div>
+                <div class="col-sm-12">
+                    <style type="text/css">
+                        textarea {
+                            resize: none;
+                        }
+                    </style>
+                    <textarea cols="20" rows="7" formControlName="detail"
+                        class="form-control form-control-solid input"></textarea>
+                </div>
             </div>
         </div>
+
     </div>
-    <div class="footer">
-        <button
-        type="button"
-        class="btn btn-primary"
-        >Enviar</button>
+    <div class="footer button">
+        <button type="button" class="btn btn-primary">Enviar</button>
     </div>
+   
+    <div class="row mb-10">
+        <div class="col-sm-12">
+            <div id="map" style="height: 400px;"></div>
+        </div>
+    </div>
+
+    <div class="row mb-10">
+        <div class="col-sm-12">
+            <label class="form-label label">Dirección:</label>
+        </div>
+        <div class="col-sm-12">
+            <label class="form-label">Cuerpo Bajo B, Centro Cívico Gubernamental José Cecilio del Valle, Boulevard Juan
+                Pablo II. Tegucigalpa M.D.C. Honduras.</label>
+        </div>
+        <div class="col-sm-12">
+            <label class="form-label label">Horario de Atención al Ciudadano:</label>
+        </div>
+        <div class=" col-sm-12">
+            <label class="form-label">Lunes a Viernes de 8:00 a.m. a 4:00 p.m.</label>
+        </div>
+        <div class="col-sm-12">
+            <label class="form-label label">Teléfonos:</label>
+        </div>
+        <div class="col-sm-12">
+            <label class="form-label"> 2233-5588</label>
+        </div>
+        <div class="col-sm-12">
+            <label class="form-label label">Fax:</label>
+        </div>
+        <div class="col-sm-12">
+            <label class="form-label">2241585252</label>
+        </div>
+        <div class="col-sm-12">
+            <label class="form-label label">Correo Electrónico:</label>
+        </div>
+        <div class="col-sm-12">
+            <label class="form-label">Consultas@trabajo.gob.hn</label>
+        </div>
+    </div>
+
+    
+
+
 </form>

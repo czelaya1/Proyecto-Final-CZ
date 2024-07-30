@@ -1,0 +1,27 @@
+.title-contact{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: larger;
+    color: white;
+    font-weight: bold;
+    padding: 3rem;
+    width: 100%;
+    background-color:darkgrey
+}
+
+.img-content {
+    max-width: 95%;
+    height: auto;
+}
+
+.main-content {
+    display: grid;
+    flex-direction: column;
+    width: 100%;
+}
+
+body {
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

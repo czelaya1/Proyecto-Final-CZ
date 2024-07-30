@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http";
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -12,6 +13,12 @@ import { ArticleComponent } from './components/article/article.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
+import { CaftaComponent } from './pages/cafta/cafta.component';
+import { CaftaFormComponent } from './components/cafta-form/cafta-form.component';
+import { QuienesSomosComponent } from './pages/quienes-somos/quienes-somos.component';
+import { QuienesSomosFormComponent } from './components/quienes-somos-form/quienes-somos-form.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,14 +28,20 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
     SidebarComponent,
     ArticleComponent,
     ContactFormComponent,
-    ContactoComponent
+    ContactoComponent,
+    CaftaComponent,
+    CaftaFormComponent,
+    QuienesSomosComponent,
+    QuienesSomosFormComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
